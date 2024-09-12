@@ -42,25 +42,25 @@ end
 local function applyExtraAttackCantripStatus(entity)
     Osi.ApplyStatus(entity, "EXTRA_ATTACK_2_EK_CANTRIP", 6)
     debugLog("Status EXTRA_ATTACK_2_EK_CANTRIP applied to " .. tostring(entity))
-    print("Applied extra attack cantrip status")
+    debugLog("Applied extra attack cantrip status")
 end
 
 local function applyExtraAttackSpellStatus(entity)
     Osi.ApplyStatus(entity, "EXTRA_ATTACK_2_EK_SPELL", 6)
     debugLog("Status EXTRA_ATTACK_2_EK_SPELL applied to " .. tostring(entity))
-    print("Applied extra attack spell status")
+    debugLog("Applied extra attack spell status")
 end
 
 local function removeExtraAttackCantripStatus(entity)
     Osi.RemoveStatus(entity, "EXTRA_ATTACK_2_EK_CANTRIP")
     debugLog("Removed extra attack cantrip status from " .. tostring(entity))
-    print("Removed extra attack cantrip status")
+    debugLog("Removed extra attack cantrip status")
 end
 
 local function removeExtraAttackSpellStatus(entity)
     Osi.RemoveStatus(entity, "EXTRA_ATTACK_2_EK_SPELL")
     debugLog("Removed extra attack spell status from " .. tostring(entity))
-    print("Removed extra attack spell status")
+    debugLog("Removed extra attack spell status")
 end
 
 local function removeExtraAttackStatuses(entity)
@@ -101,7 +101,7 @@ local function handleSpellCast(entity, spell, state)
         state.attacksLeft = 3
         debugLog("ActionSurge used, resetting attacksLeft to 3")
     end
-    print("OneDnD Fighter: CantripUsed before check:", state.cantripUsed)
+    debugLog("OneDnD Fighter: CantripUsed before check:", state.cantripUsed)
     debugLog("CantripUsed before check:", state.cantripUsed)
     debugLog("Attacks left before action:", state.attacksLeft)
     if state.attacksLeft > 0 then
@@ -110,7 +110,7 @@ local function handleSpellCast(entity, spell, state)
         if spellStats.Level == 0 and Osi.SpellHasSpellFlag(spell, "IsSpell") == 1 then
             debugLog("Cantrip detected. Checking for use cost...")
             if splitUseCost == "BonusActionPoint:1" or spellUseCost == "BonusActionPoint:1" then
-                print("Bonus Action cantrip detected. attacksLeft count and cantripUsed not modified.")
+                debugLog("Bonus Action cantrip detected. attacksLeft count and cantripUsed not modified.")
                 debugLog("Bonus Action cantrip detected. attacksLeft count and cantripUsed not modified.")
             else
                 debugLog("Normal Action catrip detected.")
@@ -129,7 +129,7 @@ local function handleSpellCast(entity, spell, state)
                     state.attacksLeft = 0
                 end
                 removeExtraAttackCantripStatus(entity)
-                print("OneDnD Fighter: CantripUsed after cast:", state.cantripUsed)
+                debugLog("OneDnD Fighter: CantripUsed after cast:", state.cantripUsed)
             end
         elseif spellStats.Level > 0 and Osi.SpellHasSpellFlag(spell, "IsSpell") == 1 then
             debugLog("Leveled Spell detected. Checking for use cost...")
@@ -177,14 +177,14 @@ local function handleSpellCast(entity, spell, state)
             if splitUseCost == "BonusActionPoint:1" or spellUseCost == "BonusActionPoint:1" then
                 debugLog("OneDnD Fighter: Generic Bonus Action attack detected. attacksLeft count not modified.")
             else
-                print("OneDnD Fighter: Used Extra Attack incompatible action: Cleaning up")
+                debugLog("OneDnD Fighter: Used Extra Attack incompatible action: Cleaning up")
                 debugLog("Used Extra Attack incompatible action: Cleaning up")
                 cleanupEntityState(entity)
             end
         end
         debugLog("Attacks left after action: " .. state.attacksLeft)
-        print("OneDnD Fighter: Attacks left after action:", state.attacksLeft)
-        print("OneDnD Fighter: CantripUsed after action:", state.cantripUsed)
+        debugLog("OneDnD Fighter: Attacks left after action:", state.attacksLeft)
+        debugLog("OneDnD Fighter: CantripUsed after action:", state.cantripUsed)
     end
 
     
