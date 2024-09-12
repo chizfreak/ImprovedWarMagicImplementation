@@ -1,0 +1,25 @@
+{
+    "SchemaVersion": 1,
+    "Tabs": [
+        {
+        "TabId": "Settings",
+        "TabName": "Settings",   
+            "Settings": [
+                {
+                    "Id": "improvedExtraAttackFix",
+                    "Name": "War Magic w/ Improved Extra Attack",
+                    "Type": "checkbox",
+                    "Default": true,
+                    "Description": "Integrates War Magic feature with level 11 Improved Extra Attack. \nDisable if you encounter any issues."
+                },
+                {
+                    "Id": "debugToggle",
+                    "Name": "Debug Toggle",
+                    "Type": "checkbox",
+                    "Default": false,
+                    "Description": "Keep it disabled unless you want to see verbose output on the console. \nIt is intended for the author to find bugs eaiser"
+                }
+            ]
+        }
+    ]
+}
