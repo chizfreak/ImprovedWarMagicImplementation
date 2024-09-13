@@ -1,0 +1,65 @@
+{
+    "FileVersion": 1,
+    "Progressions": [
+		{
+            "UUID": "6b099a1b-dd6c-4b6a-a0b5-70fa86dbe6d3",
+            "Strings": [
+                {
+                    "Action": "Remove",
+                    "Type": "PassivesAdded",
+                    "Strings": [
+                        "WarMagic"
+                    ]
+                }
+            ]
+        },
+        {
+            "UUID": "6b099a1b-dd6c-4b6a-a0b5-70fa86dbe6d3",
+            "Strings": [
+                {
+                    "Action": "Insert",
+                    "Type": "PassivesAdded",
+                    "Strings": [
+                        "WarMagic_EK"
+                    ]
+                }
+            ]
+        },
+		{
+            "UUID": "6b099a1b-dd6c-4b6a-a0b5-70fa86dbe6d3",
+            "Strings": [
+                {
+                    "Action": "Insert",
+                    "Type": "PassivesAdded",
+                    "Strings": [
+                        "ExtraAttack_EK"
+                    ]
+                }
+            ]
+        },
+		{
+            "UUID": "d393b47c-629b-4c26-a857-741f9ef2eff2",
+            "Strings": [
+                {
+                    "Action": "Insert",
+                    "Type": "PassivesRemoved",
+                    "Strings": [
+                        "ExtraAttack_EK"
+                    ]
+                }
+            ]
+        },
+        {
+            "UUID": "3a32caaa-ad37-4374-9130-17b81d8262f6",
+            "Strings": [
+                {
+                    "Action": "Insert",
+                    "Type": "PassivesAdded",
+                    "Strings": [
+                        "ImprovedWarMagic_EK"
+                    ]
+                }
+            ]
+        }
+    ]
+}
